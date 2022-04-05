@@ -1,5 +1,8 @@
 package facade;
 
+import Logica.AbstractFactory.AbstractFactoryCRUD;
+import Logica.AbstractFactory.FabricaEmpleado;
+import Logica.CRUD.Read;
 import java.awt.Component;
 import java.awt.Image;
 
@@ -24,10 +27,12 @@ import interfaz.VentanaPeliculas.VentanaPeliculaMoonfall;
 import interfaz.VentanaPeliculas.VentanaPeliculaPaseo6;
 import interfaz.VentanaPeliculas.VentanaPeliculaScream;
 import interfaz.VentanaPeliculas.VentanaPeliculaSpiderman;
-import lógica.Verificar;
+import java.util.ArrayList;
+import logica.Verificar;
 
 public class Fachada {
-
+        private AbstractFactoryCRUD miFabrica;
+        private Read read;
 	private VistaControlador interfaz;
 	
 	private Verificar verificar;
@@ -61,24 +66,25 @@ public class Fachada {
 	
 	//de ventana inicio a cartelera
 	public void cambiarPanel(VentanaInicio vi, VentanaCartelera vc) {
-		
-		
-		
-		String myPass = String.valueOf(vi.getPwdContraseña().getPassword()); 
-		String myName = vi.getTxtNombre();
-				
-//Debe hacer la comprobación si es admin, o no; y si esta en la basse de datos
-		if (myName.isEmpty() || myPass.isEmpty()) {
-
-			JOptionPane.showMessageDialog(null, "Porfavor, rellene todos los campos");
-		
-	}else {
-		
-		System.out.println("Usuario: "+myName);
-		System.out.println("Contraseña: "+myPass);
+            String myPass = String.valueOf(vi.getPwdContraseña().getPassword()); 
+            String myName = vi.getTxtNombre();
+            miFabrica=new FabricaEmpleado(myName);
+            read=miFabrica.readRegistro();
+            ArrayList arrayTemp = read.operacionCrud();
+            if (myName.isEmpty() || myPass.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Por favor rellene todos los campos");
+            }else if(arrayTemp.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Este empleado no se encuentra registrado");
+            }else if(myName.equals(arrayTemp.get(0)) && myPass.equals(arrayTemp.get(1))){
+                System.out.println("Usuario: "+myName);
+                System.out.println("Contraseña: "+myPass);
 		vi.setVisible(false);
 		vc.setVisible(true);
-	}
+            }else{
+                JOptionPane.showMessageDialog(null, "Credenciales incorrectas");
+            }
+
+
 	
 	
 		

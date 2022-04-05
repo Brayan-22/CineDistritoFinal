@@ -1,4 +1,4 @@
-package lógica;
+package logica;
 
 import java.util.IllegalFormatException;
 import java.util.regex.Matcher;

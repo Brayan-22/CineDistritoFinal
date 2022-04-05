@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import lógica.Verificar;
+import logica.Verificar;
 
 public class VentanaRegistroCliente extends JPanel{
 
