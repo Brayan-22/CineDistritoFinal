@@ -5,9 +5,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import interfaz.VentanaIngresoCliente;
-import interfaz.VistaControlador;
-import interfaz.VentanaPeliculas.*;
+import Presentacion.*;
+
 
 
 public class ControladorEvento implements ActionListener, KeyListener{
@@ -53,135 +52,66 @@ public class ControladorEvento implements ActionListener, KeyListener{
 		//Boton pelicula Encanto
 		if (e.getSource() == interfaz.getVentanaCartelera().getBtnPeliculaEncanto()) {
 
-			interfaz.getFachada().cambiarPeliculaEncanto(interfaz.getVentanaCartelera(),interfaz.getVentanaPeliculaEncanto());
+//			interfaz.getFachada().cambiarPeliculaEncanto(interfaz.getVentanaCartelera(),interfaz.getVentanaPeliculaEncanto());
+			interfaz.getFachada().setPelicula("Encanto", interfaz.getVentanaPelicula());
+			interfaz.getFachada().cambiarCarteleraPelicula(interfaz.getVentanaCartelera(), interfaz.getVentanaPelicula());
 
 		}
 		if(e.getSource() == interfaz.getVentanaCartelera().getBtnPeliculaMoonfall()) {
 			
-			interfaz.getFachada().cambiarPeliculaMoonfall(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaMoonfall());
+			//interfaz.getFachada().cambiarPeliculaMoonfall(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaMoonfall());
+			interfaz.getFachada().setPelicula("Moonfall", interfaz.getVentanaPelicula());
+			interfaz.getFachada().cambiarCarteleraPelicula(interfaz.getVentanaCartelera(), interfaz.getVentanaPelicula());
 			
 		}
 		if(e.getSource() == interfaz.getVentanaCartelera().getBtnPeliculaPaseo6()) {
 			
-			interfaz.getFachada().cambiarPeliculaPaseo(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaPaseo6());
+			//interfaz.getFachada().cambiarPeliculaPaseo(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaPaseo6());
+			interfaz.getFachada().setPelicula("Paseo6", interfaz.getVentanaPelicula());
+			interfaz.getFachada().cambiarCarteleraPelicula(interfaz.getVentanaCartelera(), interfaz.getVentanaPelicula());
 			
 		}
 		if(e.getSource() == interfaz.getVentanaCartelera().getBtnPeliculaScream()) {
 			
-			interfaz.getFachada().cambiarPeliculaScream(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaScream());
+			//interfaz.getFachada().cambiarPeliculaScream(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaScream());
+			interfaz.getFachada().setPelicula("Scream", interfaz.getVentanaPelicula());
+			interfaz.getFachada().cambiarCarteleraPelicula(interfaz.getVentanaCartelera(), interfaz.getVentanaPelicula());
 			
 		}
 		if(e.getSource() == interfaz.getVentanaCartelera().getBtnPeliculaSpiderman()) {
 			
-			interfaz.getFachada().cambiarPeliculaSpiderman(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaSpiderman());
+			//interfaz.getFachada().cambiarPeliculaSpiderman(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaSpiderman());
+			interfaz.getFachada().setPelicula("Spiderman", interfaz.getVentanaPelicula());
+			interfaz.getFachada().cambiarCarteleraPelicula(interfaz.getVentanaCartelera(), interfaz.getVentanaPelicula());
 			
 		}
 		
 		// // // // // // // // // VENTANA PELICULAS  // // // // // // // // //
 		
-		//encanto
-		if(e.getSource() == interfaz.getVentanaPeliculaEncanto().getBtnSalir()) {
+		
+		if(e.getSource() == interfaz.getVentanaPelicula().getBtnSalir()) {
 			
-			interfaz.getFachada().regresoEncantoCartelera(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaEncanto());
-			
-		}
-		if(e.getSource() == interfaz.getVentanaPeliculaEncanto().getBtnContinue()) {
-			
-			interfaz.getFachada().continueEncantoIngresoCliente(interfaz.getVentanaPeliculaEncanto(), interfaz.getVentanaIngresoCliente());
+			interfaz.getFachada().regresoPeliculaCartelera(interfaz.getVentanaCartelera(), interfaz.getVentanaPelicula());
 			
 		}
 		
-		//Moonfall
-		if (e.getSource() == interfaz.getVentanaPeliculaMoonfall().getBtnSalir()) {
-
-			interfaz.getFachada().regresoMoonfallCartelera(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaMoonfall());
-
-		}
-		if(e.getSource() == interfaz.getVentanaPeliculaMoonfall().getBtnContinue()) {
+		if(e.getSource() == interfaz.getVentanaPelicula().getBtnContinue()) {
 			
-			interfaz.getFachada().continueMoonfallIngresoCliente(interfaz.getVentanaPeliculaMoonfall(), interfaz.getVentanaIngresoCliente());
+			interfaz.getFachada().continueIngresoCliente(interfaz.getVentanaPelicula(), interfaz.getVentanaIngresoCliente());
 			
-		}
-		
-		
-		//Paseo 6
-		if (e.getSource() == interfaz.getVentanaPeliculaPaseo6().getBtnSalir()) {
-
-			interfaz.getFachada().regresoPaseoCartelera(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaPaseo6());
-
-		}
-		
-		if(e.getSource() == interfaz.getVentanaPeliculaPaseo6().getBtnContinue()) {
-			
-			interfaz.getFachada().continuePaseoIngresoCliente(interfaz.getVentanaPeliculaPaseo6(), interfaz.getVentanaIngresoCliente());
-			
-		}
-		
-		//Scream
-		if (e.getSource() == interfaz.getVentanaPeliculaScream().getBtnSalir()) {
-
-			interfaz.getFachada().regresoScreamCartelera(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaScream());
-
-		}
-		if(e.getSource() == interfaz.getVentanaPeliculaScream().getBtnContinue()) {
-			
-			interfaz.getFachada().continueScreamIngresoCliente(interfaz.getVentanaPeliculaScream(), interfaz.getVentanaIngresoCliente());
-			
-		}
-		
-		//Spiderman
-		if (e.getSource() == interfaz.getVentanaPeliculaSpiderman().getBtnSalir()) {
-
-			interfaz.getFachada().regresoSpidermanCartelera(interfaz.getVentanaCartelera(), interfaz.getVentanaPeliculaSpiderman());
-
-		}
-		if(e.getSource() == interfaz.getVentanaPeliculaSpiderman().getBtnContinue()) {
-			
-			interfaz.getFachada().continueSpidermanIngresoCliente(interfaz.getVentanaPeliculaSpiderman(), interfaz.getVentanaIngresoCliente());
-			
-		}
+		}if (e.getSource()== interfaz.getVentanaPelicula().getCmbCinesDisponibles()) {
+                    
+                interfaz.getFachada().setPelicula(interfaz.getVentanaPelicula().getLblTitulo().getText(), interfaz.getVentanaPelicula());
+            }
 		
 		// // // // // // // // // VENTANA INGRESO CLIENTE // // // // // // // // //
 		
 				
-		if(e.getSource()== interfaz.getVentanaIngresoCliente().getBtnSalir()) {
-			
-			switch (interfaz.getVentanaIngresoCliente().getPeliculaSeleccionada()) {
-				
-			case "Encanto":
-				
-				interfaz.getFachada().regresoIngresoPelicula(interfaz.getVentanaPeliculaEncanto(), interfaz.getVentanaIngresoCliente());
 		
-			break;
-			
-			case "Moonfall":
-				
-				interfaz.getFachada().regresoIngresoPelicula(interfaz.getVentanaPeliculaMoonfall(), interfaz.getVentanaIngresoCliente());
-				
-			break;
-			
-			case "Paseo 6":
-				
-				interfaz.getFachada().regresoIngresoPelicula(interfaz.getVentanaPeliculaPaseo6(), interfaz.getVentanaIngresoCliente());
-				
-			break;
-			case "Scream":
-				
-				interfaz.getFachada().regresoIngresoPelicula(interfaz.getVentanaPeliculaScream(), interfaz.getVentanaIngresoCliente());
-				
-			break;
-			case "Spiderman":
-				
-				interfaz.getFachada().regresoIngresoPelicula(interfaz.getVentanaPeliculaSpiderman(), interfaz.getVentanaIngresoCliente());
-				
-			break;
-	
-			}
-		}
 		
 		if(e.getSource() == interfaz.getVentanaIngresoCliente().getBtnIngreso()) {
 			
-			interfaz.getFachada().verificacionCliente(interfaz.getVentanaIngresoCliente(), interfaz.getVentanaCompraSilla());
+			interfaz.getFachada().verificacionCliente(interfaz.getVentanaIngresoCliente(), interfaz.getVentanaCompraSilla(), interfaz.getVentanaPelicula());
 			
 		}
 		if(e.getSource() == interfaz.getVentanaIngresoCliente().getBtnRegistroUsuario()) {
@@ -193,6 +123,9 @@ public class ControladorEvento implements ActionListener, KeyListener{
 			
 			interfaz.getFachada().ingresoIngresoClienteRecuperarContraseña(interfaz.getVentanaIngresoCliente(),interfaz.getVentanaRecuperarContraseña());
 			
+		}if(e.getSource() == interfaz.getVentanaIngresoCliente().getBtnSalir()) {
+			
+			interfaz.getFachada().regresoIngresoClientePelicula(interfaz.getVentanaIngresoCliente(),interfaz.getVentanaPelicula());
 		}
 		
 		
@@ -292,7 +225,9 @@ public class ControladorEvento implements ActionListener, KeyListener{
 		if(e.getSource() == interfaz.getVentanaPago().getBtnFinalizar()) {
 			
 			interfaz.getFachada().obtenerPago(interfaz.getVentanaPago());
-			interfaz.getFachada().pagoFinal(interfaz.getVentanaCompraSilla(), interfaz.getVentanaSnacks());
+			interfaz.getFachada().pagoFinal(interfaz.getVentanaCompraSilla(), interfaz.getVentanaSnacks(), 
+					interfaz.getVentanaInicio(), interfaz.getVentanaIngresoCliente(), interfaz.getVentanaPelicula());
+			interfaz.getFachada().reiniciar(interfaz.getVentanaCompraSilla(), interfaz.getVentanaSnacks(), interfaz.getVentanaPago(), interfaz.getVentanaPelicula());
 			interfaz.getFachada().regresoPagoCartelera(interfaz.getVentanaPago(),interfaz.getVentanaCartelera());
 			
 		}
@@ -365,6 +300,24 @@ public class ControladorEvento implements ActionListener, KeyListener{
 			char c = evt.getKeyChar(); if (c < '0' || c > '9') evt.consume();
 
 		}
+		if(evt.getSource() == interfaz.getVentanaRegistroUsuario().getFTxtDocumento()) {
+			
+			char c = evt.getKeyChar(); if (c < '0' || c > '9') evt.consume();
+		}
+		if (evt.getSource() == interfaz.getVentanaRegistroUsuario().getFTxtTelefono()) {
+
+			char c = evt.getKeyChar(); if (c < '0' || c > '9') evt.consume();
+		}
+		if(evt.getSource() == interfaz.getVentanaRegistroUsuario().getFTxtNombre()) {
+			
+			char c = evt.getKeyChar(); if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != ' ')) evt.consume();
+
+		}if (evt.getSource()==interfaz.getVentanaRegistroUsuario().getFTxtApellido()) {
+                    
+                    char c = evt.getKeyChar(); if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != ' ')) evt.consume();
+                
+            }
+		
 		
 	}
 

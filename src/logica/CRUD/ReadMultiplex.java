@@ -19,18 +19,21 @@ public class ReadMultiplex implements Read{
     singletonConexion conexion;
     private Statement st;
     private ResultSet rs;
-    private ArrayList array;
+    private ArrayList<ArrayList> array;
     @Override
     public ArrayList operacionCrud() {
         array=new ArrayList();
         conexion=singletonConexion.getConexion();
-        String sql="select nombre_multiplex from multiplex";
+        String sql="select idmultiplex,nombre_multiplex from multiplex";
         try {
             conexion.conectar();
             st=conexion.getConnection().createStatement();
             rs=st.executeQuery(sql);
             while(rs.next()){
-                array.add(rs.getString(1));
+                ArrayList arrayTemp=new ArrayList();
+                arrayTemp.add(rs.getInt(1));
+                arrayTemp.add(rs.getString(2));
+                array.add(arrayTemp);
             }
             conexion.desconectar();
         } catch (SQLException e) {

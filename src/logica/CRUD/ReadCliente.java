@@ -24,6 +24,7 @@ public class ReadCliente implements Read{
     private Statement st;
     private ResultSet rs;
     
+    
     public ReadCliente(String correo) {
         this.correo=correo;
         array=null;

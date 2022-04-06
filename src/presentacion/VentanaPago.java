@@ -1,4 +1,4 @@
-package interfaz;
+package Presentacion;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -17,6 +17,7 @@ public class VentanaPago extends JPanel{
 	private JButton btnFinalizar;
 	private JToggleButton tbtnPaypal;
 	private JToggleButton tbtnBitcoin;
+	private ButtonGroup grupoToggle;
 	
 
 public VentanaPago() {
@@ -72,7 +73,7 @@ public VentanaPago() {
 			tbtnBitcoin.getHeight(), Image.SCALE_SMOOTH)));
 	pnlPrincipal.add(tbtnBitcoin);
 	
-	ButtonGroup grupoToggle = new ButtonGroup();
+	grupoToggle = new ButtonGroup();
 	grupoToggle.add(tbtnBitcoin);
 	grupoToggle.add(tbtnPaypal);
 	
@@ -99,4 +100,9 @@ public JToggleButton getTbtnPaypal() {
 public JToggleButton getTbtnBitcoin() {
 	return tbtnBitcoin;
 }
+
+public ButtonGroup getButtonGroup() {
+	return grupoToggle;
+}
+
 }
