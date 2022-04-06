@@ -45,6 +45,7 @@ public class CreateCliente implements Create{
             pst.setString(5, correo);
             pst.execute();
             conexion.desconectar();
+            JOptionPane.showMessageDialog(null, "Registro exitoso");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "La cedula que ingreso ya existe con otro cliente");
         }

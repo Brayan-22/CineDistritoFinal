@@ -1,4 +1,4 @@
-package interfaz;
+package Presentacion;
 
 import java.awt.Color;
 import java.awt.Dimension;

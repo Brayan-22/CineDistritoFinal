@@ -1,4 +1,4 @@
-package interfaz;
+package Presentacion;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import logica.Verificar;
 
 public class VentanaRegistroCliente extends JPanel{
 

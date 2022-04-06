@@ -1,4 +1,4 @@
-package interfaz;
+package Presentacion;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,8 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-
-import interfaz.VentanaPeliculas.VentanaPelicula;
 
 public class VentanaCartelera extends JPanel{
 
@@ -178,11 +176,6 @@ public class VentanaCartelera extends JPanel{
 	}
 	
 	
-
-
-
-
-	
 	public JButton getBtnSalir() {
 		return btnSalir;
 	}
@@ -208,60 +201,5 @@ public class VentanaCartelera extends JPanel{
 	}
 	
 	
-	
-//	@Override
-//	public void actionPerformed(ActionEvent e) {
-//		if (e.getSource() == btnSalir) {
-//			this.dispose();
-//			System.out.println("Ha regresado a la ventana de inicio");
-//
-//			VentanaInicio v1 = new VentanaInicio();
-//			v1.setVisible(true);
-//			
-//			
-//		}
-//		else if(e.getSource()==peliculaEncanto) {
-//			
-//			System.out.println("Selecciono: Encanto");
-//			movieName = "Encanto";
-//			pelicula = new VentanaPelicula();
-//			pelicula.setPelicula(movieName);
-//			pelicula.setVisible(true);
-//			this.dispose();
-//		}
-//		else if(e.getSource()==peliculaMoonfall) {
-//			System.out.println("Selecciono: Moonfall");
-//			movieName = "Moonfall";
-//			pelicula = new VentanaPelicula();
-//			pelicula.setPelicula(movieName);
-//			pelicula.setVisible(true);
-//			this.dispose();
-//		}
-//		else if(e.getSource()==peliculaPaseo6) {
-//			System.out.println("Selecciono: Paseo 6");
-//			movieName = "Paseo6";
-//			pelicula = new VentanaPelicula();
-//			pelicula.setPelicula(movieName);
-//			pelicula.setVisible(true);
-//			this.dispose();
-//		}
-//		else if(e.getSource()==peliculaScream) {
-//			System.out.println("Selecciono: Scream");
-//			movieName = "Scream";
-//			pelicula = new VentanaPelicula();
-//			pelicula.setPelicula(movieName);
-//			pelicula.setVisible(true);
-//			this.dispose();
-//		}
-//		else if(e.getSource()==peliculaSpiderman) {
-//			System.out.println("Selecciono: Spiderman");
-//			movieName = "Spiderman";
-//			pelicula = new VentanaPelicula();
-//			pelicula.setPelicula(movieName);
-//			pelicula.setVisible(true);
-//			this.dispose();
-//		}
-//	
-//
-//	}
+
 }

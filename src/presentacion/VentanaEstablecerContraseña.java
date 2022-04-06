@@ -1,6 +1,5 @@
 
-package interfaz;
-
+package Presentacion;
 	import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -16,7 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import logica.Verificar;
 
 	public class VentanaEstablecerContraseña extends JPanel{
 
