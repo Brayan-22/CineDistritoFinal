@@ -1,15 +1,9 @@
-package interfaz;
+package Presentacion;
 
 import javax.swing.JFrame;
 
 import facade.ControladorEvento;
 import facade.Fachada;
-import interfaz.VentanaPeliculas.VentanaPelicula;
-import interfaz.VentanaPeliculas.VentanaPeliculaEncanto;
-import interfaz.VentanaPeliculas.VentanaPeliculaMoonfall;
-import interfaz.VentanaPeliculas.VentanaPeliculaPaseo6;
-import interfaz.VentanaPeliculas.VentanaPeliculaScream;
-import interfaz.VentanaPeliculas.VentanaPeliculaSpiderman;
 
 public class VistaControlador extends JFrame{
 	
@@ -27,11 +21,6 @@ public class VistaControlador extends JFrame{
 	private VentanaRegistroCliente vrc;
 	private VentanaRegistroUsuario vru;
 	private VentanaSnacks vs;
-	private VentanaPeliculaEncanto vpEncanto;
-	private VentanaPeliculaMoonfall vpMoonfall;
-	private VentanaPeliculaPaseo6 vpPaseo;
-	private VentanaPeliculaScream vpScream;
-	private VentanaPeliculaSpiderman vpSpiderman;
 	private VentanaPago vpago;
 	
 	
@@ -44,8 +33,6 @@ public class VistaControlador extends JFrame{
 		this.fachada = fachada;
 		iniciarComponentes();
 		capturarEventos();
-		
-		
 	}
 	
 	private void iniciarComponentes() {
@@ -81,23 +68,9 @@ public class VistaControlador extends JFrame{
 		vi = new VentanaInicio();
 		this.add(vi);
 		
-//		vp = new VentanaPelicula();
-//		this.add(vp);
+		vp = new VentanaPelicula();
+		this.add(vp);
 		
-		vpEncanto = new VentanaPeliculaEncanto();
-		this.add(vpEncanto);
-		
-		vpMoonfall = new VentanaPeliculaMoonfall();
-		this.add(vpMoonfall);
-		
-		vpPaseo = new VentanaPeliculaPaseo6();
-		this.add(vpPaseo);
-		
-		vpScream = new VentanaPeliculaScream();
-		this.add(vpScream);
-		
-		vpSpiderman = new VentanaPeliculaSpiderman();
-		this.add(vpSpiderman);
 		
 		vrc = new VentanaRegistroCliente();
 		this.add(vrc);
@@ -115,17 +88,12 @@ public class VistaControlador extends JFrame{
 		
 		vi.setVisible(true);
 		
-//		vcc.setVisible(false);
+		vp.setVisible(false);
 		va.setVisible(false);
 		vc.setVisible(false);
 		vcs.setVisible(false);
 		vec.setVisible(false);
 		vic.setVisible(false);
-		vpEncanto.setVisible(false);
-		vpMoonfall.setVisible(false);
-		vpPaseo.setVisible(false);
-		vpScream.setVisible(false);
-		vpSpiderman.setVisible(false);
 		vrcontraseña.setVisible(false);
 		vrc.setVisible(false);
 		vru.setVisible(false);
@@ -157,25 +125,10 @@ public class VistaControlador extends JFrame{
 		vc.getBtnPeliculaScream().addActionListener(getControl());
 		vc.getBtnPeliculaSpiderman().addActionListener(getControl());
 		
-		vpEncanto.getBtnContinue().addActionListener(getControl());
-		vpEncanto.getBtnSalir().addActionListener(getControl());
-		vpEncanto.getCmbCinesDisponibles().addActionListener(getControl());
+		vp.getBtnContinue().addActionListener(getControl());
+		vp.getBtnSalir().addActionListener(getControl());
+		vp.getCmbCinesDisponibles().addActionListener(getControl());
 		
-		vpMoonfall.getBtnContinue().addActionListener(getControl());
-		vpMoonfall.getBtnSalir().addActionListener(getControl());
-		vpMoonfall.getCmbCinesDisponibles().addActionListener(getControl());
-		
-		vpPaseo.getBtnContinue().addActionListener(getControl());
-		vpPaseo.getBtnSalir().addActionListener(getControl());
-		vpPaseo.getCmbCinesDisponibles().addActionListener(getControl());
-		
-		vpScream.getBtnContinue().addActionListener(getControl());
-		vpScream.getBtnSalir().addActionListener(getControl());
-		vpScream.getCmbCinesDisponibles().addActionListener(getControl());
-		
-		vpSpiderman.getBtnContinue().addActionListener(getControl());
-		vpSpiderman.getBtnSalir().addActionListener(getControl());
-		vpSpiderman.getCmbCinesDisponibles().addActionListener(getControl());
 		
 		vic.getBtnSalir().addActionListener(getControl());
 		vic.getBtnIngreso().addActionListener(getControl());
@@ -185,71 +138,9 @@ public class VistaControlador extends JFrame{
 		vcs.getBtnContinue().addActionListener(getControl());
 		vcs.getBtnSalir().addActionListener(getControl());
 		//
-		vcs.getBtnSilla00().addActionListener(getControl());
-		vcs.getBtnSilla01().addActionListener(getControl());
-		vcs.getBtnSilla02().addActionListener(getControl());
-		vcs.getBtnSilla03().addActionListener(getControl());
-		vcs.getBtnSilla04().addActionListener(getControl());
-		vcs.getBtnSilla05().addActionListener(getControl());
-		vcs.getBtnSilla06().addActionListener(getControl());
-		vcs.getBtnSilla07().addActionListener(getControl());
-		vcs.getBtnSilla08().addActionListener(getControl());
-		vcs.getBtnSilla09().addActionListener(getControl());
-		//
-		vcs.getBtnSilla10().addActionListener(getControl());
-		vcs.getBtnSilla11().addActionListener(getControl());
-		vcs.getBtnSilla12().addActionListener(getControl());
-		vcs.getBtnSilla13().addActionListener(getControl());
-		vcs.getBtnSilla14().addActionListener(getControl());
-		vcs.getBtnSilla15().addActionListener(getControl());
-		vcs.getBtnSilla16().addActionListener(getControl());
-		vcs.getBtnSilla17().addActionListener(getControl());
-		vcs.getBtnSilla18().addActionListener(getControl());
-		vcs.getBtnSilla19().addActionListener(getControl());
-		//
-		vcs.getBtnSilla20().addActionListener(getControl());
-		vcs.getBtnSilla21().addActionListener(getControl());
-		vcs.getBtnSilla22().addActionListener(getControl());
-		vcs.getBtnSilla23().addActionListener(getControl());
-		vcs.getBtnSilla24().addActionListener(getControl());
-		vcs.getBtnSilla25().addActionListener(getControl());
-		vcs.getBtnSilla26().addActionListener(getControl());
-		vcs.getBtnSilla27().addActionListener(getControl());
-		vcs.getBtnSilla28().addActionListener(getControl());
-		vcs.getBtnSilla29().addActionListener(getControl());
-		//
-		vcs.getBtnSilla30().addActionListener(getControl());
-		vcs.getBtnSilla31().addActionListener(getControl());
-		vcs.getBtnSilla32().addActionListener(getControl());
-		vcs.getBtnSilla33().addActionListener(getControl());
-		vcs.getBtnSilla34().addActionListener(getControl());
-		vcs.getBtnSilla35().addActionListener(getControl());
-		vcs.getBtnSilla36().addActionListener(getControl());
-		vcs.getBtnSilla37().addActionListener(getControl());
-		vcs.getBtnSilla38().addActionListener(getControl());
-		vcs.getBtnSilla39().addActionListener(getControl());
-		//
-		vcs.getBtnSilla40().addActionListener(getControl());
-		vcs.getBtnSilla41().addActionListener(getControl());
-		vcs.getBtnSilla42().addActionListener(getControl());
-		vcs.getBtnSilla43().addActionListener(getControl());
-		vcs.getBtnSilla44().addActionListener(getControl());
-		vcs.getBtnSilla45().addActionListener(getControl());
-		vcs.getBtnSilla46().addActionListener(getControl());
-		vcs.getBtnSilla47().addActionListener(getControl());
-		vcs.getBtnSilla48().addActionListener(getControl());
-		vcs.getBtnSilla49().addActionListener(getControl());
-		// 
-		vcs.getBtnSilla50().addActionListener(getControl());
-		vcs.getBtnSilla51().addActionListener(getControl());
-		vcs.getBtnSilla52().addActionListener(getControl());
-		vcs.getBtnSilla53().addActionListener(getControl());
-		vcs.getBtnSilla54().addActionListener(getControl());
-		vcs.getBtnSilla55().addActionListener(getControl());
-		vcs.getBtnSilla56().addActionListener(getControl());
-		vcs.getBtnSilla57().addActionListener(getControl());
-		vcs.getBtnSilla58().addActionListener(getControl());
-		vcs.getBtnSilla59().addActionListener(getControl());
+                for (int i = 0; i < vcs.getArrayBotones().size(); i++) {
+                    vcs.getArrayBotones().get(i).addActionListener(getControl());
+            }
 		//
 		vcs.getRbtnGeneral().addActionListener(getControl());
 		vcs.getRbtnPreferencial().addActionListener(getControl());
@@ -280,6 +171,10 @@ public class VistaControlador extends JFrame{
 		
 		vru.getBtnIngreso().addActionListener(getControl());
 		vru.getBtnSalir().addActionListener(getControl());
+		vru.getFTxtDocumento().addKeyListener(getControl());
+		vru.getFTxtNombre().addKeyListener(getControl());
+		vru.getFTxtTelefono().addKeyListener(getControl());
+                vru.getFTxtApellido().addKeyListener(getControl());
 		
 		vpago.getTbtnBitcoin().addActionListener(getControl());
 		vpago.getTbtnPaypal().addActionListener(getControl());
@@ -303,29 +198,11 @@ public class VistaControlador extends JFrame{
 		return vc;
 	}
 	
-//	public VentanaPelicula getVentanaPelicula() {
-//		return vp;
-//	}
-	
-	public VentanaPeliculaEncanto getVentanaPeliculaEncanto() {
-		return vpEncanto;
+	public VentanaPelicula getVentanaPelicula() {
+		return vp;
 	}
 	
-	public VentanaPeliculaMoonfall getVentanaPeliculaMoonfall() {
-		return vpMoonfall;
-	}
 	
-	public VentanaPeliculaPaseo6 getVentanaPeliculaPaseo6() {
-		return vpPaseo;
-	}
-	
-	public VentanaPeliculaScream getVentanaPeliculaScream() {
-		return vpScream;
-	}
-	
-	public VentanaPeliculaSpiderman getVentanaPeliculaSpiderman() {
-		return vpSpiderman;
-	}
 	
 	public VentanaIngresoCliente getVentanaIngresoCliente() {
 		return vic;

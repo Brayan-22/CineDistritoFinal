@@ -1,4 +1,4 @@
-package interfaz;
+package Presentacion;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import logica.Verificar;
 
 public class VentanaRegistroUsuario extends JPanel {
 
@@ -35,7 +34,7 @@ public class VentanaRegistroUsuario extends JPanel {
 	private JCheckBox cbxAutorizacion;
 	private JButton btnIngreso;
 	private JLabel lblIngresoUsuario;
-	
+	private JTextField txtApellido;
 
 
 	public VentanaRegistroUsuario() {
@@ -81,7 +80,7 @@ public class VentanaRegistroUsuario extends JPanel {
 		
 
 		JLabel lblNombre = new JLabel();
-		lblNombre.setText("Nombres & Apellidos: ");
+		lblNombre.setText("Nombre: ");
 		lblNombre.setBounds(120, 110, 190, 30);
 		lblNombre.setFont(new Font("Comic Sans MS", Font.ITALIC, 16));
 
@@ -95,15 +94,15 @@ public class VentanaRegistroUsuario extends JPanel {
 
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblApellido = new JLabel();
-		lblApellido.setText("Número de Telefono: ");
-		lblApellido.setBounds(400, 110, 190, 30);
-		lblApellido.setFont(new Font("Comic Sans MS", Font.ITALIC, 16));
+		JLabel lblTelefono = new JLabel();
+		lblTelefono.setText("Telefono: ");
+		lblTelefono.setBounds(400, 210, 190, 30);
+		lblTelefono.setFont(new Font("Comic Sans MS", Font.ITALIC, 16));
 
-		pnlPrincipal.add(lblApellido);
+		pnlPrincipal.add(lblTelefono);
 
 		txtTelefono = new JTextField();
-		txtTelefono.setBounds(400, 140, 200, 30);
+		txtTelefono.setBounds(400, 240, 200, 30);
 		txtTelefono.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
 
 		pnlPrincipal.add(txtTelefono);
@@ -127,13 +126,13 @@ public class VentanaRegistroUsuario extends JPanel {
 
 		JLabel lblContraseña = new JLabel();
 		lblContraseña.setText("Contraseña: ");
-		lblContraseña.setBounds(400, 210, 150, 30);
+		lblContraseña.setBounds(400, 310, 150, 30);
 		lblContraseña.setFont(new Font("Comic Sans MS", Font.ITALIC, 16));
 
-		pnlPrincipal.add(lblContraseña);
+		//pnlPrincipal.add(lblContraseña);
 
 		txtContraseña = new JTextField();
-		txtContraseña.setBounds(400, 240, 200, 30);
+		txtContraseña.setBounds(400, 440, 200, 30);
 		txtContraseña.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
 
 		pnlPrincipal.add(txtContraseña);
@@ -195,23 +194,23 @@ public class VentanaRegistroUsuario extends JPanel {
 		pnlPrincipal.add(cmbCargo);
 		
 		JLabel lblRol = new JLabel();
-		lblRol.setText("Rol: ");
+		lblRol.setText("Contraseña: ");
 		lblRol.setBounds(400, 410, 190, 30);
 		lblRol.setFont(new Font("Comic Sans MS", Font.ITALIC, 16));
 		
 		pnlPrincipal.add(lblRol);
-
-		cmbRol = new JComboBox<>();
-		cmbRol.addItem("Rol aún no disponible");
-		cmbRol.setBounds(400, 440, 190, 30);
-		cmbRol.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
-
-		pnlPrincipal.add(cmbRol);
-
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 		
-
+                JLabel lblApellido = new JLabel();
+                lblApellido.setText("Apellido: ");
+                lblApellido.setBounds(400, 110, 190, 30);
+                lblApellido.setFont(new Font("Comic Sans MS", Font.ITALIC, 16));
+                pnlPrincipal.add(lblApellido);
+                
+                txtApellido=new JTextField();
+                txtApellido.setBounds(400, 140, 200, 30);
+                txtApellido.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
+                pnlPrincipal.add(txtApellido);
+                
 	}
 
 
@@ -293,7 +292,17 @@ public class VentanaRegistroUsuario extends JPanel {
 		
 		return (String)cmbMultiplex.getSelectedItem();
 	}
-
+        
+        public JTextField getFTxtApellido() {
+            return txtApellido;
+        }
+        
+        public String getTxtApellido(){
+            return txtApellido.getText();
+        }
+        public void setTxtApellido(JTextField txtApellido) {
+            this.txtApellido = txtApellido;
+        }
 
 
 	/*
@@ -410,6 +419,8 @@ public class VentanaRegistroUsuario extends JPanel {
 
 	}
 	*/
+
+
 
 }
 

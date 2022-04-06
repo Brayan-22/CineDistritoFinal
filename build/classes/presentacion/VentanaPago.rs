@@ -1,1 +1,0 @@
-interfaz.VentanaPago
