@@ -1,4 +1,4 @@
-package lógica;
+package logica;
 
 public class Cliente {
 
